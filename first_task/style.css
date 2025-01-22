@@ -1,0 +1,60 @@
+header {
+    padding: 0 20px;
+    background-color: lightgray;
+    height: 75px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+#ul-menu {
+    display: flex;
+    justify-content: right;
+}
+#ul-footer {
+    margin: 0;
+    padding: 0;
+}
+
+h1::before,
+h1::after {
+    content: "★";
+    font-size: 24px;
+  }
+  
+#ul-footer li:last-child {
+    font-weight: bold;
+}
+
+a {
+    color:olive;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rosybrown;
+    text-decoration: underline;
+}
+
+.project {
+    border-style: solid;
+    border-color:lightgray;
+    display: flex;
+    margin: 20px 0;
+}
+.project:nth-of-type(2) {
+    background-color: lightgray;
+}
+img {
+    margin: 20px;
+    width: 200px;
+    height: 100px;
+}
+
+li {
+    margin: 15px 20px;
+}
