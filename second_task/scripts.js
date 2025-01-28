@@ -3,6 +3,11 @@ const userOperator = document.getElementById("operator");
 const userSecondNumber = document.getElementById("second-number");
 const calculateButton = document.getElementById("calculate-button");
 
+const addButton = document.getElementById("add");
+const subButton = document.getElementById("sub");
+const mulButton = document.getElementById("mul");
+const divButton = document.getElementById("div");
+
 
 const OPERATORS = "+-*/"
 
@@ -61,28 +66,39 @@ function parseOperator (value) {
     return operator;
 }
 
-function calculate (firstNum, operator, secondNum) {
+function calculate (firstNum, arithmeticAction, secondNum) {
     try{
         const parsedFirstNum = parseNumber(firstNum);
-        const parsedOperator = parseOperator(operator);
         const parsedSecondNum = parseNumber(secondNum);
-        const arithmeticAction = defineAction(parsedOperator);
         const result =  arithmeticAction(parsedFirstNum, parsedSecondNum);
+        return result;
+    } catch (error) {
+        throw Error(error);
+    }
+}
+
+function outputAlert(message) {
+    alert(message);
+}
+
+function calculateButtonWrapper() {
+    try {
+        const parsedOperator = parseOperator(userOperator.value);
+        const arithmeticAction = defineAction(parsedOperator);
+        const result = calculate(
+            userFirstNumber.value, 
+            arithmeticAction, 
+            userSecondNumber.value);
         return result;
     } catch (error) {
         return error;
     }
 }
 
-function outputAlert() {
-    const result = calculate(
-        userFirstNumber.value, 
-        userOperator.value, 
-        userSecondNumber.value);
-    alert(result);
-}
 
 calculateButton.addEventListener('click', event => {
     event.preventDefault();
-    outputAlert();
-})
+    const result = calculateButtonWrapper();
+    outputAlert(result);
+});
+
