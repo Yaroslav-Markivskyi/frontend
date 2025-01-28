@@ -46,9 +46,11 @@ a:hover {
     display: flex;
     margin: 20px 0;
 }
-.project:nth-of-type(2) {
+
+.project:last-of-type {
     background-color: lightgray;
 }
+
 img {
     margin: 20px;
     width: 200px;
