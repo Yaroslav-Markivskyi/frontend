@@ -95,10 +95,81 @@ function calculateButtonWrapper() {
     }
 }
 
+function addButtonWrapper() {
+    try {
+        const result = calculate(
+            userFirstNumber.value, 
+            add, 
+            userSecondNumber.value);
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+function subButtonWrapper() {
+    try {
+        const result = calculate(
+            userFirstNumber.value, 
+            sub, 
+            userSecondNumber.value);
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+function mulButtonWrapper() {
+    try {
+        const result = calculate(
+            userFirstNumber.value, 
+            mul, 
+            userSecondNumber.value);
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
+
+function divButtonWrapper() {
+    try {
+        const result = calculate(
+            userFirstNumber.value, 
+            div, 
+            userSecondNumber.value);
+        return result;
+    } catch (error) {
+        return error;
+    }
+}
 
 calculateButton.addEventListener('click', event => {
     event.preventDefault();
     const result = calculateButtonWrapper();
+    outputAlert(result);
+});
+
+addButton.addEventListener('click', event => {
+    event.preventDefault();
+    const result = addButtonWrapper();
+    outputAlert(result);
+});
+
+subButton.addEventListener('click', event => {
+    event.preventDefault();
+    const result = subButtonWrapper();
+    outputAlert(result);
+});
+
+mulButton.addEventListener('click', event => {
+    event.preventDefault();
+    const result = mulButtonWrapper();
+    outputAlert(result);
+});
+
+divButton.addEventListener('click', event => {
+    event.preventDefault();
+    const result = divButtonWrapper();
     outputAlert(result);
 });
 
