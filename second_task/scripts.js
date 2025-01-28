@@ -3,6 +3,12 @@ const userOperator = document.getElementById("operator");
 const userSecondNumber = document.getElementById("second-number");
 const calculateButton = document.getElementById("calculate-button");
 
+const ADD = '+';
+const SUB = '-';
+const MUL = '*';
+const DIV = '/';
+
+
 const addButton = document.getElementById("add");
 const subButton = document.getElementById("sub");
 const mulButton = document.getElementById("mul");
@@ -33,13 +39,13 @@ function div (firstNum, secondNum) {
 
 function defineAction(operator) {
     switch(operator) {
-        case '+':
+        case ADD:
             return add;
-        case '-':
+        case SUB:
             return sub;
-        case '*':
+        case MUL:
             return mul;
-        case '/':
+        case DIV:
             return div;
         default:
             throw Error("Undefine operator");
@@ -95,54 +101,6 @@ function calculateButtonWrapper() {
     }
 }
 
-function addButtonWrapper() {
-    try {
-        const result = calculate(
-            userFirstNumber.value, 
-            add, 
-            userSecondNumber.value);
-        return result;
-    } catch (error) {
-        return error;
-    }
-}
-
-function subButtonWrapper() {
-    try {
-        const result = calculate(
-            userFirstNumber.value, 
-            sub, 
-            userSecondNumber.value);
-        return result;
-    } catch (error) {
-        return error;
-    }
-}
-
-function mulButtonWrapper() {
-    try {
-        const result = calculate(
-            userFirstNumber.value, 
-            mul, 
-            userSecondNumber.value);
-        return result;
-    } catch (error) {
-        return error;
-    }
-}
-
-function divButtonWrapper() {
-    try {
-        const result = calculate(
-            userFirstNumber.value, 
-            div, 
-            userSecondNumber.value);
-        return result;
-    } catch (error) {
-        return error;
-    }
-}
-
 calculateButton.addEventListener('click', event => {
     event.preventDefault();
     const result = calculateButtonWrapper();
@@ -151,25 +109,21 @@ calculateButton.addEventListener('click', event => {
 
 addButton.addEventListener('click', event => {
     event.preventDefault();
-    const result = addButtonWrapper();
-    outputAlert(result);
+    userOperator.value = ADD;
 });
 
 subButton.addEventListener('click', event => {
     event.preventDefault();
-    const result = subButtonWrapper();
-    outputAlert(result);
+    userOperator.value = SUB;
 });
 
 mulButton.addEventListener('click', event => {
     event.preventDefault();
-    const result = mulButtonWrapper();
-    outputAlert(result);
+    userOperator.value = MUL;
 });
 
 divButton.addEventListener('click', event => {
     event.preventDefault();
-    const result = divButtonWrapper();
-    outputAlert(result);
+    userOperator.value = DIV;
 });
 
