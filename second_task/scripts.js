@@ -34,7 +34,7 @@ function defineAction(operator) {
             return sub;
         case '*':
             return mul;
-        case '-':
+        case '/':
             return div;
         default:
             throw Error("Undefine operator");
@@ -45,7 +45,7 @@ function defineAction(operator) {
 function parseNumber(value) {
     const number = Number(value);
     if (isNaN(number)) {
-        throw Error("Input value is not  a Number type!")
+        throw Error("Input number is not  a Number type!")
     }
     return number;
 }
