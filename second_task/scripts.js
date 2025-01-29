@@ -1,55 +1,32 @@
 const userFirstNumber = document.getElementById("first-number");
 const userOperator = document.getElementById("operator");
 const userSecondNumber = document.getElementById("second-number");
+
+const operatorButtons = document.querySelectorAll('.button-operators button');
+const numberButtons = document.querySelectorAll('.button-numbers button');
+
 const calculateButton = document.getElementById("calculate-button");
 
 let activeInput = null;
 
 const formData = {};
 
-const operators = {
-    ADD: '+',
-    SUB: '-',
-    MUL: '*',
-    DIV: '/'
-};
-
-const operatorButtons = [
-    {id: "addButton", value: '+'},
-    {id: "subButton", value: '-'},
-    {id: "mulButton", value: '*'},
-    {id: "divButton", value: '/'},
-]
-
-const numberButtons = [
-    { id: "oneButton", value: 1 },
-    { id: "twoButton", value: 2 },
-    { id: "threeButton", value: 3 },
-    { id: "fourButton", value: 4 },
-    { id: "fiveButton", value: 5 },
-    { id: "sixButton", value: 6 },
-    { id: "sevenButton", value: 7 },
-    { id: "eightButton", value: 8 },
-    { id: "nineButton", value: 9 },
-    { id: "zeroButton", value: 0 }
-];
-
 const OPERATORS = "+-*/"
 
 
-function add (firstNum, secondNum) {
+function add(firstNum, secondNum) {
     return firstNum + secondNum;
 }
 
-function sub (firstNum, secondNum) {
+function sub(firstNum, secondNum) {
     return firstNum - secondNum;
 }
 
-function mul (firstNum, secondNum) {
+function mul(firstNum, secondNum) {
     return firstNum * secondNum;
 }
 
-function div (firstNum, secondNum) {
+function div(firstNum, secondNum) {
     if (secondNum === 0) {
         throw Error("Division by zero is not allowed");
     }
@@ -58,19 +35,18 @@ function div (firstNum, secondNum) {
 
 function defineAction(operator) {
     switch(operator) {
-        case operators.ADD:
+        case '+':
             return add;
-        case operators.SUB:
+        case '-':
             return sub;
-        case operators.MUL:
+        case '*':
             return mul;
-        case operators.DIV:
+        case '/':
             return div;
         default:
             throw Error("Undefined operator");
     }
 }
-
 
 function parseNumber(value) {
     const number = Number(value);
@@ -80,7 +56,7 @@ function parseNumber(value) {
     return number;
 }
 
-function parseOperator (value) {
+function parseOperator(value) {
     const operator = String(value);
     if (operator.length > 1){
         throw Error("Input operator is too long for an arithmetic operator!");
@@ -91,10 +67,12 @@ function parseOperator (value) {
     return operator;
 }
 
-function calculate (firstNum, arithmeticAction, secondNum) {
+function calculate(firstNum, operator, secondNum) {
     try{
         const parsedFirstNum = parseNumber(firstNum);
+        const parsedOperator = parseOperator(operator);
         const parsedSecondNum = parseNumber(secondNum);
+        const arithmeticAction = defineAction(parsedOperator);
         const result =  arithmeticAction(parsedFirstNum, parsedSecondNum);
         return result;
     } catch (error) {
@@ -108,11 +86,9 @@ function outputAlert(message) {
 
 function calculateButtonWrapper() {
     try {
-        const parsedOperator = parseOperator(userOperator.value);
-        const arithmeticAction = defineAction(parsedOperator);
         const result = calculate(
             userFirstNumber.value, 
-            arithmeticAction, 
+            userOperator.value, 
             userSecondNumber.value);
         return result;
     } catch (error) {
@@ -120,39 +96,40 @@ function calculateButtonWrapper() {
     }
 }
 
-calculateButton.addEventListener('click', event => {
-    event.preventDefault();
-    const result = calculateButtonWrapper();
-    outputAlert(result);
-});
-
-function insertValue(value) {
+function insertNumberValue(value) {
     if (activeInput) {
         activeInput.value += value;
     }
 }
 
-for (let i = 0; i < operatorButtons.length; i++){
-    const btn = document.getElementById(operatorButtons[i].id);
-    btn.addEventListener('click', event => {
-        event.preventDefault();
-        userOperator.value = operatorButtons[i].value;
-    }) ;
+function insertOperatorValue(value) {
+    userOperator.value = value;
 }
 
-
-for (let i = 0; i < numberButtons.length; i++){
-    const btn = document.getElementById(numberButtons[i].id);
-    btn.addEventListener('click', event => {
-        event.preventDefault();
-        insertValue(numberButtons[i].value);
-    }) ;
+function eventListenerButton(buttons, action) {
+    for (const button of buttons) {
+        const value = button.getAttribute("data-value");    
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            action(value);
+        });
+    }    
 }
 
-document.querySelectorAll("input").forEach(input => {
+eventListenerButton(operatorButtons, insertOperatorValue);
+eventListenerButton(numberButtons, insertNumberValue);
+
+
+for (const input of [userFirstNumber, userSecondNumber]) {
     input.addEventListener("focus", () => {
         activeInput = input;
     });
+}
+
+calculateButton.addEventListener('click', event => {
+    event.preventDefault();
+    const result = calculateButtonWrapper();
+    outputAlert(result);
 });
 
 function saveData(event) {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./scripts.js" defer></script>
 </head>
 <body>
@@ -25,23 +26,24 @@
             Operators
         </h3>
         <div class="button-operators">
-            <button type="submit" id="addButton">Add</button>
-            <button type="submit" id="subButton">Sub</button>
-            <button type="submit" id="mulButton">Mul</button>
-            <button type="submit" id="divButton">Div</button>
+            <button id="addButton" type="submit" data-value="+">Add</button>
+            <button id="subButton" type="submit" data-value="-">Sub</button>
+            <button id="mulButton" type="submit" data-value="*">Mul</button>
+            <button id="divButton" type="submit" data-value="/">Div</button>
+
         </div>
         <h3>Numbers</h3>
-        <div class="numbers">
-            <button id="oneButton" type="submit">1</button>
-            <button id="twoButton" type="submit">2</button>
-            <button id="threeButton" type="submit">3</button>
-            <button id="fourButton" type="submit">4</button>
-            <button id="fiveButton" type="submit">5</button>
-            <button id="sixButton" type="submit">6</button>
-            <button id="sevenButton" type="submit">7</button>
-            <button id="eightButton" type="submit">8</button>
-            <button id="nineButton" type="submit">9</button>
-            <button id="zeroButton" type="submit">0</button>
+        <div class="button-numbers">
+            <button id="oneButton" type="submit" data-value="1">1</button>
+            <button id="twoButton" type="submit" data-value="2">2</button>
+            <button id="threeButton" type="submit" data-value="3">3</button>
+            <button id="fourButton" type="submit" data-value="4">4</button>
+            <button id="fiveButton" type="submit" data-value="5">5</button>
+            <button id="sixButton" type="submit" data-value="6">6</button>
+            <button id="sevenButton" type="submit" data-value="7">7</button>
+            <button id="eightButton" type="submit" data-value="8">8</button>
+            <button id="nineButton" type="submit" data-value="9">9</button>
+            <button id="zeroButton" type="submit" data-value="0">0</button>
         </div>
         <h3>Calculate</h3>
         <button id="calculate-button" type="submit">Calculate</button>
