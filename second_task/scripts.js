@@ -7,10 +7,12 @@ let activeInput = null;
 
 const formData = {};
 
-const ADD = '+';
-const SUB = '-';
-const MUL = '*';
-const DIV = '/';
+const operators = {
+    ADD: '+',
+    SUB: '-',
+    MUL: '*',
+    DIV: '/'
+};
 
 const addButton = document.getElementById("add");
 const subButton = document.getElementById("sub");
@@ -52,16 +54,16 @@ function div (firstNum, secondNum) {
 
 function defineAction(operator) {
     switch(operator) {
-        case ADD:
+        case operators.ADD:
             return add;
-        case SUB:
+        case operators.SUB:
             return sub;
-        case MUL:
+        case operators.MUL:
             return mul;
-        case DIV:
+        case operators.DIV:
             return div;
         default:
-            throw Error("Undefine operator");
+            throw Error("Undefined operator");
     }
 }
 
@@ -122,22 +124,22 @@ calculateButton.addEventListener('click', event => {
 
 addButton.addEventListener('click', event => {
     event.preventDefault();
-    userOperator.value = ADD;
+    userOperator.value = operators.ADD;
 });
 
 subButton.addEventListener('click', event => {
     event.preventDefault();
-    userOperator.value = SUB;
+    userOperator.value = operators.SUB;
 });
 
 mulButton.addEventListener('click', event => {
     event.preventDefault();
-    userOperator.value = MUL;
+    userOperator.value = operators.MUL;
 });
 
 divButton.addEventListener('click', event => {
     event.preventDefault();
-    userOperator.value = DIV;
+    userOperator.value = operators.DIV;
 });
 
 
