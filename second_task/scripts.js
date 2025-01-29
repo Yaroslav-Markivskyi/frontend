@@ -14,10 +14,12 @@ const operators = {
     DIV: '/'
 };
 
-const addButton = document.getElementById("add");
-const subButton = document.getElementById("sub");
-const mulButton = document.getElementById("mul");
-const divButton = document.getElementById("div");
+const operatorButtons = [
+    {id: "addButton", value: '+'},
+    {id: "subButton", value: '-'},
+    {id: "mulButton", value: '*'},
+    {id: "divButton", value: '/'},
+]
 
 const numberButtons = [
     { id: "oneButton", value: 1 },
@@ -124,31 +126,18 @@ calculateButton.addEventListener('click', event => {
     outputAlert(result);
 });
 
-addButton.addEventListener('click', event => {
-    event.preventDefault();
-    userOperator.value = operators.ADD;
-});
-
-subButton.addEventListener('click', event => {
-    event.preventDefault();
-    userOperator.value = operators.SUB;
-});
-
-mulButton.addEventListener('click', event => {
-    event.preventDefault();
-    userOperator.value = operators.MUL;
-});
-
-divButton.addEventListener('click', event => {
-    event.preventDefault();
-    userOperator.value = operators.DIV;
-});
-
-
 function insertValue(value) {
     if (activeInput) {
         activeInput.value += value;
     }
+}
+
+for (let i = 0; i < operatorButtons.length; i++){
+    const btn = document.getElementById(operatorButtons[i].id);
+    btn.addEventListener('click', event => {
+        event.preventDefault();
+        userOperator.value = operatorButtons[i].value;
+    }) ;
 }
 
 
