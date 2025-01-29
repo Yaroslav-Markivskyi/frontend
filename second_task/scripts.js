@@ -19,16 +19,18 @@ const subButton = document.getElementById("sub");
 const mulButton = document.getElementById("mul");
 const divButton = document.getElementById("div");
 
-const oneButton = document.getElementById("oneButton");
-const twoButton = document.getElementById("twoButton");
-const threeButton = document.getElementById("threeButton");
-const fourButton = document.getElementById("fourButton");
-const fiveButton = document.getElementById("fiveButton");
-const sixButton = document.getElementById("sixButton");
-const sevenButton = document.getElementById("sevenButton");
-const eightButton = document.getElementById("eightButton");
-const nineButton = document.getElementById("nineButton");
-const zeroButton = document.getElementById("zeroButton");
+const numberButtons = [
+    { id: "oneButton", value: 1 },
+    { id: "twoButton", value: 2 },
+    { id: "threeButton", value: 3 },
+    { id: "fourButton", value: 4 },
+    { id: "fiveButton", value: 5 },
+    { id: "sixButton", value: 6 },
+    { id: "sevenButton", value: 7 },
+    { id: "eightButton", value: 8 },
+    { id: "nineButton", value: 9 },
+    { id: "zeroButton", value: 0 }
+];
 
 const OPERATORS = "+-*/"
 
@@ -150,56 +152,13 @@ function insertValue(value) {
 }
 
 
-oneButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(1);
-});
-
-twoButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(2);
-});
-
-threeButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(3);
-});
-
-fourButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(4);
-});
-
-
-fiveButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(5);
-});
-
-sixButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(6);
-});
-
-sevenButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(7);
-});
-
-eightButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(8);
-});
-
-nineButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(9);
-});
-
-zeroButton.addEventListener('click', event => {
-    event.preventDefault();
-    insertValue(0);
-});
+for (let i = 0; i < numberButtons.length; i++){
+    const btn = document.getElementById(numberButtons[i].id);
+    btn.addEventListener('click', event => {
+        event.preventDefault();
+        insertValue(numberButtons[i].value);
+    }) ;
+}
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("focus", () => {
