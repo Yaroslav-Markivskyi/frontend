@@ -1,0 +1,68 @@
+.Post {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ActiveImage {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.PrevButton,
+.NextButton {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.PrevButton {
+  left: 10px;
+}
+
+.NextButton {
+  right: 10px;
+}
+
+.ThumbnailContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.Thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.Thumbnail:hover,
+.ActiveThumbnail {
+  opacity: 1;
+  border: 2px solid #000;
+}
+
+.Post h2 {
+}

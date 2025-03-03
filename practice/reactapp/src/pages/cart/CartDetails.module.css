@@ -1,0 +1,67 @@
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #1D202B;
+}
+
+.Orders { 
+    width: 100%;
+    margin-left: 350px;
+    padding: 20px;
+    background-color: #EEF5F9;
+    overflow-y: auto;
+}
+
+.Orders h1 {
+    color: #1D202B;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Список замовлень */
+.Order {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.Order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Seller {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1D202B;
+    margin-bottom: 10px;
+}
+
+/* Контейнер продуктів */
+.OrderList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.PlaceOrderButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #1D202B;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.PlaceOrderButton:hover {
+    background-color: #343a40;
+}

@@ -1,0 +1,29 @@
+.sideBar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #1C2025;
+    color: white;
+}   
+
+.Menu {
+    padding: 0;
+    margin: 0;
+}
+
+.Menu li {
+    padding: 10px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.Menu li:hover {
+    background-color: #2C3136;
+}
+
+.Menu li a {
+    color: white;
+    text-decoration: none;
+}
