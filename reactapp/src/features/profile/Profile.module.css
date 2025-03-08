@@ -1,0 +1,73 @@
+.Container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.Profile {
+  flex-grow: 1;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.Error {
+  color: red;
+  text-align: center;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Label {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #444;
+}
+
+.Input, .Textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.Textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.Button {
+  margin-top: 20px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: #0056b3;
+}
+
+.Loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}

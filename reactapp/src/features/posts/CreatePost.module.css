@@ -1,0 +1,84 @@
+.Container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #1D202B;
+}
+
+.CreatePost {
+  width: 700px;
+  margin-left: 350px;
+  height: 100%;
+  background-color:#EEF5F9;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+}
+
+.Label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Input,
+.Textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.Textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.Input[type="file"] {
+  border: none;
+}
+
+.Button {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Button:hover {
+  background-color: #0056b3;
+}
+
+.Button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.Error {
+  color: red;
+  font-weight: bold;
+}
+
+.Preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.Preview p {
+  font-size: 14px;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

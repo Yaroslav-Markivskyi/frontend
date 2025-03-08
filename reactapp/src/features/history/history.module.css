@@ -1,0 +1,91 @@
+/* Основний контейнер для сторінки */
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #1D202B;
+}
+
+/* Контейнер для основного вмісту */
+.cartHistoryContent { 
+    width: 100%;
+    margin-left: 350px;
+    padding: 20px;
+    background-color: #EEF5F9;
+    overflow-y: auto;
+}
+
+/* Контейнер для кнопок "Customer" і "Seller" */
+.cartHistoryContent button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cartHistoryContent button:hover {
+    background-color: #45a049;
+}
+
+/* Контейнер для історії замовлень */
+.cartHistory {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для кожного елемента історії замовлень */
+.historyItem {
+    background-color: #F9F9F9;
+    border: 1px solid #DDDDDD;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.historyItem h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.historyItem p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Список товарів в замовленні */
+.historyItem ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.historyItem li {
+    padding: 5px;
+    font-size: 1em;
+    color: #444;
+    border-bottom: 1px solid #EEE;
+}
+
+.historyItem li:last-child {
+    border-bottom: none;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 30px;
+}

@@ -1,0 +1,87 @@
+.Order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    margin: 12px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.Order:hover {
+    transform: scale(1.02);
+}
+
+.Image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.Details {
+    flex: 1;
+    padding-left: 16px;
+}
+
+.Title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.Price,
+.Available,
+.Total {
+    font-size: 1rem;
+    color: #666;
+    margin: 4px 0;
+}
+
+.QuantityContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.AddQuantity {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #1D202B;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.AddQuantity:hover {
+    background-color: #3a3d4d;
+}
+
+.QuantityText {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0 8px;
+}
+
+.RemoveButton {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.RemoveButton:hover {
+    background-color: #cc0000;
+}

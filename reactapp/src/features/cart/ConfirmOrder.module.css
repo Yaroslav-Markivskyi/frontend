@@ -1,0 +1,14 @@
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #1D202B;
+}
+
+.ConfirmOrder { 
+    width: 100%;
+    margin-left: 350px;
+    padding: 20px;
+    background-color: #EEF5F9;
+    overflow-y: auto;
+}
